@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MSMONAYMENT" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:statusBarColor">#0B7A3D</item>
+    </style>
+    <style name="Theme.MyApplication" parent="Theme.MSMONAYMENT" />
+</resources>

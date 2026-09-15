@@ -1,0 +1,64 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+  <path
+      android:pathData="M24,2C11.85,2 2,11.85 2,24C2,36.15 11.85,46 24,46C36.15,46 46,36.15 46,24C46,11.85 36.15,2 24,2Z">
+    <aapt:attr name="android:fillColor">
+      <gradient
+          android:startX="4"
+          android:startY="4"
+          android:endX="44"
+          android:endY="44"
+          android:type="linear">
+        <item android:offset="0.0" android:color="#FF0B6623" />
+        <item android:offset="0.5" android:color="#FF15803D" />
+        <item android:offset="1.0" android:color="#FF047857" />
+      </gradient>
+    </aapt:attr>
+  </path>
+  <!-- Cyber / AI Circuit Arc -->
+  <path
+      android:pathData="M24,6 A18,18 0 0 1 42,24"
+      android:strokeWidth="2.5"
+      android:strokeColor="#FFD4AF37"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M24,42 A18,18 0 0 1 6,24"
+      android:strokeWidth="2.5"
+      android:strokeColor="#FF38BDF8"
+      android:strokeLineCap="round"/>
+  <!-- Central Digital Frame -->
+  <path
+      android:pathData="M16,16 L32,16 A3,3 0 0 1 35,19 L35,29 A3,3 0 0 1 32,32 L16,32 A3,3 0 0 1 13,29 L13,19 A3,3 0 0 1 16,16 Z"
+      android:fillColor="#1AFFFFFF"
+      android:strokeWidth="2"
+      android:strokeColor="#FFFFFFFF"/>
+  <!-- Glowing AI Sparkle Stars / Nodes -->
+  <path
+      android:pathData="M24,19 L25.5,22.5 L29,24 L25.5,25.5 L24,29 L22.5,25.5 L19,24 L22.5,22.5 Z"
+      android:fillColor="#FFD4AF37"/>
+  <!-- Top Node Antenna -->
+  <path
+      android:pathData="M24,11 L24,16"
+      android:strokeWidth="2"
+      android:strokeColor="#FFD4AF37"/>
+  <path
+      android:pathData="M24,7 A2,2 0 1,0 24,11 A2,2 0 1,0 24,7 Z"
+      android:fillColor="#FFD4AF37"/>
+  <!-- Left/Right Connectors -->
+  <path
+      android:pathData="M13,24 L9,24 M35,24 L39,24"
+      android:strokeWidth="2"
+      android:strokeColor="#FF38BDF8"
+      android:strokeLineCap="round"/>
+  <!-- Digital Nodes -->
+  <path
+      android:pathData="M37,10 A2,2 0 1,0 37,14 A2,2 0 1,0 37,10 Z"
+      android:fillColor="#FFFFFFFF"/>
+  <path
+      android:pathData="M11,34 A2,2 0 1,0 11,38 A2,2 0 1,0 11,34 Z"
+      android:fillColor="#FFD4AF37"/>
+</vector>

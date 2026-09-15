@@ -1,0 +1,6 @@
+{
+  "name": "M.S MONAYM ENT.",
+  "description": "বাংলাদেশের বিশ্বস্ত ডিজিটাল ভূমি ও দলিল সহায়ক - ডিজিটাল দলিল রাইটার (Word এক্সপোর্ট), খতিয়ান, ই-নামজারি সহায়িকা, ভূমি উন্নয়ন কর ক্যালকুলেটর ও আইন সহায়িকা",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,33 @@
+package com.msmonaym.land.ui.navigation
+
+sealed class Screen(val route: String, val title: String, val iconEmoji: String) {
+    object Splash : Screen("splash", "স্প্ল্যাশ", "🚀")
+    object Lock : Screen("lock", "সিকিউরিটি কোড", "🔒")
+    object Home : Screen("home", "হোম", "🏠")
+    object Law : Screen("law", "জমি আইন", "📖")
+    object Khatian : Screen("khatian", "খতিয়ান", "📜")
+    object Porcha : Screen("porcha", "ই-পর্চা", "📄")
+    object Mutation : Screen("mutation", "ই-নামজারি", "🏛️")
+    object Tax : Screen("tax", "ভূমি কর", "💰")
+    object Registration : Screen("registration", "রেজিস্ট্রেশন", "📝")
+    object Services : Screen("services", "সরকারি সেবা", "🌐")
+    object Contact : Screen("contact", "যোগাযোগ", "📞")
+    object Calculator : Screen("calculator", "জমি মাপজোক", "📐")
+    object Search : Screen("search", "সার্চ", "🔍")
+    object About : Screen("about", "আমাদের সম্পর্কে", "ℹ️")
+    object Settings : Screen("settings", "সেটিংস", "⚙️")
+    object AiAssistant : Screen("ai_assistant", "এআই সহকারী", "🤖")
+    object SurveyReport : Screen("survey_report", "সার্ভে রিপোর্ট টুলবক্স", "📊")
+    object AdminGuide : Screen("admin_guide", "এডমিন কন্ট্রোল ও গাইড", "🛡️")
+    object AppQrCode : Screen("app_qr_code", "অ্যাপ কিউআর কোড", "📲")
+    object Payment : Screen("payment", "বিকাশ ও নগদ পেমেন্ট", "💳")
+    object PremiumServices : Screen("premium_services", "প্রিমিয়াম ভূমি সেবা ও বুকিং", "💎")
+    object AdminEarnings : Screen("admin_earnings", "এডমিন আর্নিং ও দৈনিক আয় কন্ট্রোল", "💰")
+    object AllServicesHub : Screen("all_services_hub", "সকল সেবা ও টুলবক্স", "🗂️")
+    object WarishCalculator : Screen("warish_calculator", "উত্তরাধিকার বন্টন ক্যালকুলেটর", "⚖️")
+    object AiDocScanner : Screen("ai_doc_scanner", "এআই ক্যামেরা ও দলিল স্ক্যানার", "📷")
+    object SummaryDashboard : Screen("summary_dashboard", "সামারি ড্যাশবোর্ড", "📊")
+    object DeedWriter : Screen("deed_writer", "বাংলা ডিজিটাল দলিল রাইটার", "🖋️")
+    object CompanyConsultant : Screen("company_consultant", "কোম্পানি কনসালটেন্ট", "💼")
+}
+
