@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Gavel
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.VerifiedUser
 import androidx.compose.material3.*
@@ -41,27 +42,32 @@ object PolicyAndLegalContent {
    • বাংলাদেশ আইন ও সংসদ বিষয়ক বিভাগ: http://bdlaws.minlaw.gov.bd
    • জাতীয় তথ্য বাতায়ন: https://bangladesh.gov.bd"""
 
-    const val PRIVACY_POLICY_TITLE = "গোপনীয়তা নীতি ও ডাটা নিরাপত্তা (Privacy Policy)"
+    const val PRIVACY_POLICY_TITLE = "গোপনীয়তা নীতি ও ডেটা সেফটি (Privacy Policy & Data Safety)"
 
-    const val PRIVACY_POLICY_BODY = """M.S MONAYM ENT. ব্যবহারকারীদের ব্যক্তিগত গোপনীয়তা ও তথ্যের নিরাপত্তাকে সর্বোচ্চ গুরুত্ব দেয়।
+    const val PRIVACY_POLICY_BODY = """M.S MONAYM ENT. ব্যবহারকারীদের ব্যক্তিগত গোপনীয়তা ও তথ্যের নিরাপত্তাকে সর্বোচ্চ অগ্রাধিকার দেয়। আমাদের ফাইনাল AAB-এর প্রকৃত ডেটা আচরণ অনুযায়ী:
 
-১. তথ্য সংগ্রহ ও প্রক্রিয়াকরণ:
-• ব্যবহারকারীর নাম ও মোবাইল নম্বর কেবল মাত্র অ্যাপের অভ্যন্তরে প্রোফাইল সুবিধার্থে ব্যবহার করা হয়।
-• এই তথ্য সম্পূর্ণ নিরাপদভাবে ব্যবহারকারীর নিজস্ব ডিভাইসে (Local Storage) সংরক্ষিত থাকে।
+১. ডেটা সেফটি ও সংগ্রহ বিবরণ:
+• ব্যক্তিগত তথ্য (নাম, মোবাইল নম্বর): কেবলমাত্র অ্যাপের অভ্যন্তরীণ প্রোফাইল এবং দলিল প্রস্তুতের সুবিধার্থে ঐচ্ছিকভাবে গ্রহণ করা হয়। এটি ব্যবহারকারীর নিজস্ব ডিভাইসে Local Storage-এ সংরক্ষিত থাকে, কোনো ক্লাউড সার্ভারে আপলোড বা কারো সাথে শেয়ার করা হয় না।
+• ছবি ও ডকুমেন্টস (Camera/Picker): ব্যবহারকারী যখন কোনো দলিল স্ক্যান বা অডিট করতে চান, কেবল তখনই সেই ছবিটি Gemini AI ভিশন প্রক্রিয়াকরণের জন্য এনক্রিপ্টেড চ্যানেলে ব্যবহৃত হয়। কোনো ছবি সংরক্ষণ বা বিজ্ঞাপনে ব্যবহার হয় না।
+• লোকেশন (GPS): জমি ও প্লটের সঠিক দৈর্ঘ্য-প্রস্থ ও সীমানা নির্ণয় করার সময় ডিভাইস-লেভেলে রিয়েল-টাইম প্রসেস হয়।
+• আর্থিক ট্রানজেকশন তথ্য: প্রিমিয়াম সেবার বুকিং ম্যানুয়াল TrxID হিসেবে প্রসেস হয়, কোনো ব্যাংক পাসওয়ার্ড বা গোপন পিন গ্রহণ করা হয় না।
+• বিজ্ঞাপন বা ট্র্যাকিং: কোনো তৃতীয় পক্ষের ট্র্যাকিং কুকি, ট্র্যাকার বা অ্যাড নেটওয়ার্ক নেই (Zero Third-Party Sharing)।
 
-২. ডিভাইস পারমিশন ও ব্যবহার:
-• ক্যামেরা (Camera): কেবল দলিল বা খতিয়ানের হার্ডকপি স্ক্যান এবং OCR এর জন্য ডিভাইসের মধ্যে ব্যবহার হয়।
-• লোকেশন (GPS): স্যাটেলাইটের মাধ্যমে সরাসরি জমির পরিমাপ ও সীমানা ট্র্যাক করার জন্য ব্যবহৃত হয়।
-• ফাইল ও মেমোরি: প্রস্তুতকৃত দলিল বা জমি জরিপের রসিদ ও PDF সেভ করার জন্য অ্যান্ড্রয়েড স্কোপড স্টোরেজ ব্যবহৃত হয়।
+২. ডিভাইস পারমিশন নীতি:
+• ক্যামেরা (Camera): দলিল স্ক্যানিং ও ডিজিটাল এআই অডিটের জন্য।
+• লোকেশন (GPS): স্যাটেলাইট জমি পরিমাপ ও দাগ নির্ণয়ের জন্য।
+• ফাইল ও স্টোরেজ: প্রস্তুতকৃত দলিল বা সার্ভে রিপোর্ট PDF আকারে ডিভাইসে সংরক্ষণ ও শেয়ারের জন্য।
+• বায়োমেট্রিক: অ্যাপের নিজস্ব সিকিউরিটি লক স্ক্রিনের জন্য।
 
-৩. তথ্য শেয়ারিং ও বিক্রয় নিষেধাজ্ঞা:
-আমরা নিশ্চিত করছি যে, কোনো ব্যবহারকারীর ব্যক্তিগত তথ্য, অনুসন্ধানের ইতিহাস বা দলিল সংক্রান্ত তথ্য কোনো তৃতীয় পক্ষের কাছে বিক্রয়, হস্তান্তর বা বিপণনে ব্যবহার করা হয় না।
+৩. ডেটা নিরাপত্তা ও অপসারণ (Data Deletion):
+• সকল নেটওয়ার্ক যোগাযোগ HTTPS (TLS 1.3) দ্বারা এনক্রিপ্টেড।
+• ব্যবহারকারী অ্যাপ সেটিংস থেকে ডেটা ক্লিয়ার করলে তাৎক্ষণিকভাবে তার সমস্ত লোকাল তথ্য মুছে যায়।
 
-৪. নীতিমালার হালনাগাদ ও যোগাযোগ:
-এই গোপনীয়তা নীতি গুগল প্লে স্টোরের নিরাপত্তা নীতিমালার আলোকে প্রস্তুত। যেকোনো জিজ্ঞাসা বা অভিযোগের জন্য যোগাযোগ করুন:
-📧 অফিসিয়াল ইমেইল: msmonaymenterprise@gmail.com
-📞 হটলাইন: ০১৯৭৬৪৪৪৫০৪
-🏛️ M.S MONAYM ENT. - সমগ্র বাংলাদেশ"""
+৪. যোগাযোগ ও স্বত্বাধিকারী:
+• প্রতিষ্ঠান: M.S MONAYM ENT.
+• স্বত্বাধিকারী: ইসমাঈল (Ismail)
+• হেল্পলাইন: ০১৯৭৬৪৪৪৪৫০৪
+• অফিসিয়াল ইমেইল: ismail2468ifte@gmail.com / msmonaymenterprise@gmail.com"""
 }
 
 @Composable
@@ -85,11 +91,11 @@ fun PrivacyPolicyDialog(
                     Icons.Default.Shield,
                     contentDescription = null,
                     tint = LandGreenPrimary,
-                    modifier = Modifier.size(22.dp)
+                    modifier = Modifier.size(24.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
-                    text = "গোপনীয়তা ও প্লে-স্টোর ডিসক্লেইমার",
+                    text = "গোপনীয়তা নীতি ও ডেটা সেফটি",
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp,
                     color = LandGreenDark
@@ -101,7 +107,7 @@ fun PrivacyPolicyDialog(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .heightIn(max = 420.dp)
+                    .heightIn(max = 440.dp)
                     .verticalScroll(scrollState),
                 verticalArrangement = Arrangement.spacedBy(14.dp)
             ) {
@@ -133,7 +139,7 @@ fun PrivacyPolicyDialog(
                     }
                 }
 
-                // Privacy Policy Box
+                // Privacy Policy & Data Safety Box
                 Surface(
                     color = Color(0xFFF0FDF4),
                     shape = RoundedCornerShape(12.dp),
@@ -142,10 +148,10 @@ fun PrivacyPolicyDialog(
                 ) {
                     Column(modifier = Modifier.padding(12.dp)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.Lock, contentDescription = null, tint = LandGreenDark, modifier = Modifier.size(18.dp))
+                            Icon(Icons.Default.Security, contentDescription = null, tint = LandGreenDark, modifier = Modifier.size(18.dp))
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(
-                                text = "গোপনীয়তা নীতি (Privacy Policy)",
+                                text = "ডেটা সেফটি ও নিরাপত্তা (Data Safety)",
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 12.5.sp,
                                 color = LandGreenDark

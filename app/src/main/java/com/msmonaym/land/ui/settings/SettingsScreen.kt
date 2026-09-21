@@ -1118,7 +1118,7 @@ fun SettingsScreen(
                         Spacer(modifier = Modifier.height(10.dp))
 
                         SettingItem("অ্যাপের নাম:", stringResource(id = R.string.app_name))
-                        SettingItem("ভার্সন:", "v12.0.1 (Google Play Official Release)")
+                        SettingItem("ভার্সন:", "v13.0.0 (Google Play Official Release)")
                         SettingItem("পারমিশন স্ট্যাটাস:", "প্লে-স্টোর স্ট্যান্ডার্ড (জিরো আননেসেসারি পারমিশন)")
                         SettingItem("ডেভেলপার:", "MS Monaym (M.S MONAYM ENT.)")
 
@@ -1131,7 +1131,7 @@ fun SettingsScreen(
                             border = BorderStroke(1.2.dp, LandGreenPrimary),
                             colors = ButtonDefaults.outlinedButtonColors(contentColor = LandGreenDark)
                         ) {
-                            Text("🛡️ গোপনীয়তা নীতি ও সরকারি ডিসক্লেইমার", fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                            Text("🛡️ গোপনীয়তা নীতি, ডেটা সেফটি ও সরকারি ডিসক্লেইমার", fontWeight = FontWeight.Bold, fontSize = 12.sp)
                         }
 
                         Spacer(modifier = Modifier.height(8.dp))

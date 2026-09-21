@@ -17,8 +17,8 @@ android {
     applicationId = "com.msmonaym.land"
     minSdk = 24
     targetSdk = 35
-    versionCode = 12
-    versionName = "12.0.1"
+    versionCode = 13
+    versionName = "13.0.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }

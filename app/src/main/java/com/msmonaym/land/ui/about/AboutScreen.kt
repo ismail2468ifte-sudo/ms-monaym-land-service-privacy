@@ -189,7 +189,7 @@ fun AboutScreen(
                             border = androidx.compose.foundation.BorderStroke(1.2.dp, LandGreenPrimary),
                             colors = ButtonDefaults.outlinedButtonColors(contentColor = LandGreenDark)
                         ) {
-                            Text("🛡️ সম্পূর্ণ গোপনীয়তা নীতি ও শর্তাবলী দেখুন", fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                            Text("🛡️ গোপনীয়তা নীতি ও ডেটা সেফটি (Data Safety) দেখুন", fontWeight = FontWeight.Bold, fontSize = 12.sp)
                         }
 
                         Spacer(modifier = Modifier.height(14.dp))

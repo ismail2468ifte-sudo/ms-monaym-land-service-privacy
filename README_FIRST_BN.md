@@ -1,0 +1,20 @@
+# M.S MONAYM ENT. - ল্যান্ড সার্ভিস (অ্যান্ড্রয়েড স্টুডিও ও গুগল প্লে স্টোর গাইড)
+
+এই প্রজেক্টটি Google Play Store পলিসি ২০২৬ এবং Android Studio Jellyfish / Koala / Ladybug সংস্করণের সাথে শতভাগ সামঞ্জস্যপূর্ণ করে সাজানো হয়েছে।
+
+## প্রজেক্টের প্রধান তথ্য:
+- **অ্যাপের নাম:** M.S MONAYM ENT.
+- **প্যাকেজ আইডি (Application ID):** `com.msmonaym.land`
+- **টার্গেট এসডিকে:** Target SDK 35 (Android 15 Ready), Compile SDK 36, Min SDK 24
+- **ভার্সন কোড:** 12
+- **ভার্সন নাম:** 12.0.1
+- **স্বত্বাধিকারী:** ইসমাঈল (Ismail)
+- **হেল্পলাইন:** ০১৯৭৬৪৪৪৪৫০৪
+
+## যা যা নতুনভাবে নিশ্চিত করা হয়েছে:
+১. **Android Studio Ready Wrapper:** `gradle/wrapper/gradle-wrapper.properties` সংযুক্ত, যাতে কোনো ম্যানুয়াল কনফিগারেশন ছাড়াই Gradle সিঙ্ক হয়।
+২. **Privacy Policy HTML:** `app/src/main/assets/privacy-policy.html` ফাইল যুক্ত করা হয়েছে।
+৩. **প্লে স্টোর সিকিউরিটি ও প্রো-গার্ড রুলস:** `proguard-rules.pro` অপ্টিমাইজ করা হয়েছে যাতে রিলিজ বিল্ডে কোনো ক্লাস ক্র্যাশ না করে।
+৪. **ভেক্টর গোল্ডেন লোগো:** `app/src/main/res/drawable/logo.xml` ভেক্টর ড্রয়েবল যুক্ত করা হয়েছে।
+
+ধন্যবাদ!

@@ -1,0 +1,28 @@
+# Google Play Release & Android Studio Guide for M.S MONAYM ENT.
+
+## ১. বিল্ড তৈরি করার কমান্ড (Terminal / CMD):
+### এআইবি (AAB) তৈরি করতে:
+```bash
+./gradlew bundleRelease
+```
+অথবা সরাসরি:
+```bash
+gradle :app:bundleRelease
+```
+তৈরি হওয়া ফাইল লোকেশন:
+`app/build/outputs/bundle/release/app-release.aab`
+
+### টেস্টিং এপিকে (APK) তৈরি করতে:
+```bash
+./gradlew assembleRelease
+```
+তৈরি হওয়া ফাইল লোকেশন:
+`app/build/outputs/apk/release/app-release.apk`
+
+## ২. Android Studio-তে সরাসরি সাইন করা AAB তৈরির নিয়ম:
+1. Android Studio-তে এই ফোল্ডারটি Open করুন।
+2. মেন্যু থেকে **Build > Generate Signed Bundle / APK...** নির্বাচন করুন।
+3. **Android App Bundle** সিলেক্ট করে **Next** দিন।
+4. আপনার Keystore ফাইল সিলেক্ট করুন (অথবা **Create new...** দিয়ে নতুন কি-স্টোর তৈরি করুন)।
+5. **release** ভেরিয়েন্ট নির্বাচন করে **Finish** বাটনে ক্লিক করুন।
+6. ব্যাস! Play Console-এ আপলোড করার জন্য রেডি `.aab` ফাইল তৈরি হয়ে যাবে।
