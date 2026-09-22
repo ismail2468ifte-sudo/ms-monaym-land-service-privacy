@@ -13,7 +13,7 @@ gradle :app:bundleRelease
 `app/build/outputs/bundle/release/app-release.aab`
 
 ### টেস্টিং এপিকে (APK) তৈরি করতে:
-```bash
+```bashbash
 ./gradlew assembleRelease
 ```
 তৈরি হওয়া ফাইল লোকেশন:

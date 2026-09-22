@@ -5,9 +5,9 @@
 ## প্রজেক্টের প্রধান তথ্য:
 - **অ্যাপের নাম:** M.S MONAYM ENT.
 - **প্যাকেজ আইডি (Application ID):** `com.msmonaym.land`
-- **টার্গেট এসডিকে:** Target SDK 35 (Android 15 Ready), Compile SDK 36, Min SDK 24
-- **ভার্সন কোড:** 12
-- **ভার্সন নাম:** 12.0.1
+- **টার্গেট এসডিকে:** Target SDK 36 (Android 16 Ready), Compile SDK 36, Min SDK 24
+- **ভার্সন কোড:** 14
+- **ভার্সন নাম:** 14.0.0
 - **স্বত্বাধিকারী:** ইসমাঈল (Ismail)
 - **হেল্পলাইন:** ০১৯৭৬৪৪৪৪৫০৪
 
