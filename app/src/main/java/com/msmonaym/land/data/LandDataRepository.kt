@@ -226,35 +226,88 @@ object LandDataRepository {
             category = "জাতীয় হেল্পলাইন",
             phone = "16122",
             description = "২৪ ঘণ্টা ভূমি মন্ত্রণালয়ের কল সেন্টার। খতিয়ান, ই-নামজারি ও খাজনা সংক্রান্ত তথ্যের জন্য কল করুন।",
-            isHotline = true
+            isHotline = true,
+            websiteUrl = "https://www.land.gov.bd/"
         ),
         ImportantContact(
             title = "জাতীয় তথ্য সেবা (National Info Center)",
             category = "জাতীয় হেল্পলাইন",
             phone = "333",
             description = "উপজেলা নির্বাহী অফিসার, এসি ল্যান্ড ও সরকারি অফিস সমূহের তথ্যের জন্য।",
-            isHotline = true
+            isHotline = true,
+            websiteUrl = "https://bangladesh.gov.bd/"
         ),
         ImportantContact(
             title = "M.S MONAYM ENT. কাস্টমার সাপোর্ট",
             category = "মালিক ও প্রতিষ্ঠান সহায়তা",
             phone = "01976444504",
             description = "মালিক: ইসমাঈল। জমি কেনাবেচা, বায়না, খতিয়ান যাচাই ও অনলাইন সেবা সহায়তা।",
-            isHotline = true
+            isHotline = true,
+            websiteUrl = null
         ),
         ImportantContact(
             title = "ভূমি রেকর্ড ও জরিপ অধিদপ্তর (DLR&S)",
             category = "সরকারি দপ্তর",
             phone = "02-41024301",
             description = "তেজগাঁও, ঢাকা। জরিপ, ম্যাপ ও খতিয়ান মুদ্রণ সংক্রান্ত তথ্য।",
-            isHotline = false
+            isHotline = false,
+            websiteUrl = "https://dlrs.gov.bd/"
         ),
         ImportantContact(
             title = "ভূমি আপীল বোর্ড (Land Appeal Board)",
             category = "বিচার ও আপীল",
             phone = "02-9515511",
             description = "ভূমি বিরোধ ও নামজারি আপীল সংক্রান্ত তথ্যাদি।",
-            isHotline = false
+            isHotline = false,
+            websiteUrl = "https://lab.gov.bd/"
+        )
+    )
+
+    val officialGovernmentPortals = listOf(
+        OfficialPortal(
+            id = "land_gov",
+            title = "জাতীয় ভূমি সেবা পোর্টাল",
+            subTitle = "ভূমি মন্ত্রণালয় (land.gov.bd)",
+            url = "https://www.land.gov.bd/",
+            category = "জাতীয় ভূমি বাতায়ন",
+            iconEmoji = "🏛️",
+            description = "অনলাইনে খতিয়ান অনুসন্ধান, ই-নামজারি, ভূমি উন্নয়ন কর প্রদান, উত্তরাধিকার ক্যালকুলেটর ও সকল ভূমি সেবা।"
+        ),
+        OfficialPortal(
+            id = "dlrs_gov",
+            title = "ভূমি রেকর্ড ও জরিপ অধিদপ্তর",
+            subTitle = "DLR&S বাংলাদেশ (dlrs.gov.bd)",
+            url = "https://dlrs.gov.bd/",
+            category = "জরিপ ও মৌজা ম্যাপ",
+            iconEmoji = "🗺️",
+            description = "মৌজা ম্যাপ অর্ডার, ডিজিটাল জরিপ ও খতিয়ান মুদ্রণ সংক্রান্ত সরকারি কেন্দ্রীয় অধিদপ্তর পোর্টাল।"
+        ),
+        OfficialPortal(
+            id = "eporcha_gov",
+            title = "জাতীয় ই-পর্চা সেবা",
+            subTitle = "খতিয়ান ও মৌজা ম্যাপ (eporcha.gov.bd)",
+            url = "https://eporcha.gov.bd/",
+            category = "অনলাইন পর্চা",
+            iconEmoji = "📜",
+            description = "সিএস, এসএ, আরএস, বিএস ও সিটি জরিপের রেকর্ডীয় খতিয়ান ও পর্চা যাচাই ও অনলাইন আবেদন।"
+        ),
+        OfficialPortal(
+            id = "ldtax_gov",
+            title = "ডিজিটাল ভূমি উন্নয়ন কর",
+            subTitle = "অনলাইন খাজনা পোর্টাল (ldtax.gov.bd)",
+            url = "https://ldtax.gov.bd/",
+            category = "ভূমি উন্নয়ন কর",
+            iconEmoji = "💰",
+            description = "নাগরিক নিবন্ধন, হোল্ডিং এন্ট্রি, বাৎসরিক খাজনা পরিশোধ ও ডিজিটাল দাখিলা সংগ্রহ।"
+        ),
+        OfficialPortal(
+            id = "mutation_gov",
+            title = "ই-নামজারি পোর্টাল",
+            subTitle = "খারিজ ও জমাভাগ আবেদন (mutation.land.gov.bd)",
+            url = "https://mutation.land.gov.bd/",
+            category = "নামজারি",
+            iconEmoji = "📑",
+            description = "অনলাইনে নামজারি, জমা একত্রীকরণ ও জমাভাগ আবেদনের অফিসিয়াল সরকারি প্ল্যাটফর্ম।"
         )
     )
 

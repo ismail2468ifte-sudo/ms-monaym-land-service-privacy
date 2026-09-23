@@ -34,7 +34,18 @@ data class ImportantContact(
     val category: String,
     val phone: String,
     val description: String,
-    val isHotline: Boolean = false
+    val isHotline: Boolean = false,
+    val websiteUrl: String? = null
+)
+
+data class OfficialPortal(
+    val id: String,
+    val title: String,
+    val subTitle: String,
+    val url: String,
+    val category: String,
+    val iconEmoji: String,
+    val description: String
 )
 
 data class RegistrationFeeResult(

@@ -1,9 +1,9 @@
 # Google Play Console Data Safety Form Guide for M.S MONAYM ENT.
 Package Name: `com.msmonaym.land`
 App Name: `M.S MONAYM ENT.`
-Target Version: v13.0.0 (Target SDK 35, Android 15 Ready)
+Target Version: v14.0.0 (versionCode: 14, Target SDK 36, Android 16 Ready)
 
-গুগল প্লে কনসোলে (Google Play Console) অ্যাপ জমা দেওয়ার সময় **"App content > Data safety"** সেকশনে নিচের ছক ও উত্তর অনুযায়ী পূরণ করলে আপনার AAB রিজেকশন ছাড়াই ১০০% নির্ভুলভাবে পাশ করবে:
+গুগল প্লে কনসোলে (Google Play Console) অ্যাপ জমা দেওয়ার সময় **"App content > Data safety"** ও **"Government apps"** সেকশনে নিচের ছক ও উত্তর অনুযায়ী পূরণ করলে আপনার AAB রিজেকশন ছাড়াই ১০০% নির্ভুলভাবে পাশ করবে:
 
 ---
 
@@ -52,7 +52,21 @@ Target Version: v13.0.0 (Target SDK 35, Android 15 Ready)
 
 ---
 
-## ৩. Privacy Policy URL
+## ৩. Government Apps Policy Declaration (সরকারি অ্যাপস পলিসি)
+গুগল প্লে কনসোলের **"App content > Government apps"** প্রশ্নে:
+- **"Is your app developed by or on behalf of a government?"**: **NO** (না, এটি স্বাধীন বেসরকারি অ্যাপ)
+- **সরকারি তথ্যের মূল উৎসসমূহ (Primary Sources of Government Information)**:
+  1. জাতীয় ভূমি সেবা পোর্টাল (Ministry of Land): `https://www.land.gov.bd`
+  2. ভূমি রেকর্ড ও জরিপ অধিদপ্তর (DLR&S): `https://dlrs.gov.bd`
+  3. ভূমি মন্ত্রণালয় বাংলাদেশ: `https://minland.gov.bd`
+  4. জাতীয় ই-পর্চা সেবা: `https://eporcha.gov.bd`
+  5. ডিজিটাল ভূমি উন্নয়ন কর: `https://ldtax.gov.bd`
+  6. ই-নামজারি সিস্টেম: `https://mutation.land.gov.bd`
+  7. বাংলাদেশ আইন বাতায়ন: `http://bdlaws.minlaw.gov.bd`
+
+---
+
+## ৪. Privacy Policy URL
 গুগল প্লে কনসোলে আপনার প্রাইভেসি পলিসি লিংক হিসেবে আপনার লাইভ ডোমেন বা অ্যাপের URL দিতে পারেন:
 `https://ais-pre-2pbv6u37on6ftvr6eh3ut3-773309380409.asia-east1.run.app/assets/privacy-policy.html`
 (অথবা অ্যাপের ভিতরের সেটিংস ও 'আমাদের সম্পর্কে' পেজ থেকে সরাসরি যেকোনো সময় অফলাইনেও এটি পড়তে পারবেন)।

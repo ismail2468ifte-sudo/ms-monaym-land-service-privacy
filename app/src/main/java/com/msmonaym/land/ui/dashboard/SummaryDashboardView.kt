@@ -386,6 +386,80 @@ fun SummaryDashboardView(
                 }
             }
         }
+
+        // 5. Official Government Portals Quick Action Banner
+        OutlinedCard(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.outlinedCardColors(containerColor = Color.White),
+            border = BorderStroke(1.dp, BorderColor)
+        ) {
+            Column(modifier = Modifier.padding(14.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = LandGreenContainer,
+                        modifier = Modifier.size(34.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                Icons.Default.Language,
+                                contentDescription = null,
+                                tint = LandGreenPrimary,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Column {
+                        Text(
+                            text = "অফিসিয়াল সরকারি ভূমি পোর্টাল",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 12.5.sp,
+                            color = LandGreenDark
+                        )
+                        Text(
+                            text = "জাতীয় ভূমি সেবা ও জরিপ অধিদপ্তরের পাবলিক পোর্টাল",
+                            fontSize = 10.5.sp,
+                            color = TextSecondary
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(10.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    OutlinedButton(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.land.gov.bd/"))
+                            context.startActivity(intent)
+                        },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
+                        border = BorderStroke(1.dp, LandGreenPrimary)
+                    ) {
+                        Text("🏛️ land.gov.bd", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                    }
+                    OutlinedButton(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://dlrs.gov.bd/"))
+                            context.startActivity(intent)
+                        },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
+                        border = BorderStroke(1.dp, LandGreenPrimary)
+                    ) {
+                        Text("🗺️ dlrs.gov.bd", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                    }
+                }
+            }
+        }
     }
 
     // Interactive Tracking Dialog

@@ -49,6 +49,7 @@ fun ContactScreen(
     val context = LocalContext.current
     val adminManager = remember { AdminManager(context) }
     val contacts = remember { LandDataRepository.importantContacts }
+    val portals = remember { LandDataRepository.officialGovernmentPortals }
     val officialEmail = remember { adminManager.getOfficialContactEmail() }
     val facebookUrl = remember { adminManager.getFacebookPageUrl() }
     val appUrl = remember { adminManager.getAppLaunchUrl() }
@@ -317,24 +318,156 @@ fun ContactScreen(
 
                             Spacer(modifier = Modifier.width(8.dp))
 
-                            IconButton(
-                                onClick = {
-                                    val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${contact.phone}"))
-                                    context.startActivity(intent)
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                if (contact.websiteUrl != null) {
+                                    IconButton(
+                                        onClick = {
+                                            try {
+                                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(contact.websiteUrl))
+                                                context.startActivity(intent)
+                                            } catch (e: Exception) {
+                                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                                            }
+                                        }
+                                    ) {
+                                        Surface(
+                                            shape = CircleShape,
+                                            color = LandGreenContainer,
+                                            modifier = Modifier.size(36.dp)
+                                        ) {
+                                            Box(contentAlignment = Alignment.Center) {
+                                                Icon(Icons.Default.Language, contentDescription = "Website", tint = LandGreenPrimary, modifier = Modifier.size(18.dp))
+                                            }
+                                        }
+                                    }
                                 }
-                            ) {
-                                Surface(
-                                    shape = CircleShape,
-                                    color = LandGreenPrimary,
-                                    modifier = Modifier.size(36.dp)
+
+                                IconButton(
+                                    onClick = {
+                                        val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${contact.phone}"))
+                                        context.startActivity(intent)
+                                    }
                                 ) {
-                                    Box(contentAlignment = Alignment.Center) {
-                                        Icon(Icons.Default.Call, contentDescription = "Call", tint = Color.White, modifier = Modifier.size(18.dp))
+                                    Surface(
+                                        shape = CircleShape,
+                                        color = LandGreenPrimary,
+                                        modifier = Modifier.size(36.dp)
+                                    ) {
+                                        Box(contentAlignment = Alignment.Center) {
+                                            Icon(Icons.Default.Call, contentDescription = "Call", tint = Color.White, modifier = Modifier.size(18.dp))
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+                }
+
+                // Section 2: Official Government Portals Header
+                item {
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Surface(
+                        color = LandGreenContainer,
+                        shape = RoundedCornerShape(10.dp),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(12.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text("🌐", fontSize = 18.sp)
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Column {
+                                Text(
+                                    text = "অফিসিয়াল সরকারি ভূমি সেবা পোর্টালসমূহ",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.sp,
+                                    color = LandGreenDark
+                                )
+                                Text(
+                                    text = "সরাসরি ব্রাউজারে প্রবেশ করতে ভিজিট বাটনে ক্লিক করুন",
+                                    fontSize = 10.5.sp,
+                                    color = Color.DarkGray
+                                )
+                            }
+                        }
+                    }
+                }
+
+                // Official Portals Cards
+                items(portals) { portal ->
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(containerColor = Color.White),
+                        shape = RoundedCornerShape(14.dp),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Surface(
+                                        shape = CircleShape,
+                                        color = LandGreenContainer,
+                                        modifier = Modifier.size(42.dp)
+                                    ) {
+                                        Box(contentAlignment = Alignment.Center) {
+                                            Text(portal.iconEmoji, fontSize = 20.sp)
+                                        }
+                                    }
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Column {
+                                        Text(
+                                            text = portal.title,
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 14.sp,
+                                            color = LandGreenDark
+                                        )
+                                        Text(
+                                            text = portal.subTitle,
+                                            fontWeight = FontWeight.Medium,
+                                            fontSize = 11.5.sp,
+                                            color = LandGreenPrimary
+                                        )
+                                    }
+                                }
+
+                                Button(
+                                    onClick = {
+                                        try {
+                                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(portal.url))
+                                            context.startActivity(intent)
+                                        } catch (e: Exception) {
+                                            Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                                        }
+                                    },
+                                    colors = ButtonDefaults.buttonColors(containerColor = LandGreenPrimary),
+                                    shape = RoundedCornerShape(20.dp),
+                                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp)
+                                ) {
+                                    Text("ভিজিট করুন", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(
+                                text = portal.description,
+                                fontSize = 11.5.sp,
+                                color = Color.Gray,
+                                lineHeight = 16.sp
+                            )
+                        }
+                    }
+                }
+
+                item {
+                    Spacer(modifier = Modifier.height(20.dp))
                 }
             }
         }

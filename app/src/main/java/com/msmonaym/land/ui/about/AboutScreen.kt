@@ -171,11 +171,41 @@ fun AboutScreen(
                                 }
                                 Spacer(modifier = Modifier.height(6.dp))
                                 Text(
-                                    text = "⚠️ M.S MONAYM ENT. কোনো সরকারি সংস্থা বা প্রতিষ্ঠান নয়। এটি একটি ব্যক্তিগত আইনি ও প্রযুক্তিগত সহকারী অ্যাপ। সরকারি তথ্যের মূল উৎস: ভূমি মন্ত্রণালয় বাংলাদেশ (minland.gov.bd), ই-পর্চা (eporcha.gov.bd), ভূমি উন্নয়ন কর (ldtax.gov.bd)।",
+                                    text = "⚠️ M.S MONAYM ENT. কোনো সরকারি সংস্থা বা প্রতিষ্ঠান নয়। এটি একটি ব্যক্তিগত আইনি ও প্রযুক্তিগত সহকারী অ্যাপ। সরকারি তথ্যের মূল উৎস: জাতীয় ভূমি সেবা পোর্টাল (land.gov.bd), ভূমি রেকর্ড ও জরিপ অধিদপ্তর (dlrs.gov.bd), ভূমি মন্ত্রণালয় বাংলাদেশ (minland.gov.bd), ই-পর্চা (eporcha.gov.bd), ভূমি উন্নয়ন কর (ldtax.gov.bd)।",
                                     fontSize = 11.sp,
                                     lineHeight = 16.sp,
                                     color = Color(0xFF78350F)
                                 )
+                                Spacer(modifier = Modifier.height(10.dp))
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    OutlinedButton(
+                                        onClick = {
+                                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.land.gov.bd/"))
+                                            context.startActivity(intent)
+                                        },
+                                        modifier = Modifier.weight(1f),
+                                        shape = RoundedCornerShape(8.dp),
+                                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 4.dp),
+                                        colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF92400E))
+                                    ) {
+                                        Text("🏛️ land.gov.bd", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                    }
+                                    OutlinedButton(
+                                        onClick = {
+                                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://dlrs.gov.bd/"))
+                                            context.startActivity(intent)
+                                        },
+                                        modifier = Modifier.weight(1f),
+                                        shape = RoundedCornerShape(8.dp),
+                                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 4.dp),
+                                        colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF92400E))
+                                    ) {
+                                        Text("🗺️ dlrs.gov.bd", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                    }
+                                }
                             }
                         }
 
