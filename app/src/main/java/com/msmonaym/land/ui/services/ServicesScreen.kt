@@ -3,6 +3,7 @@ package com.msmonaym.land.ui.services
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,8 +14,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.filled.Gavel
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.VerifiedUser
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -151,9 +154,45 @@ fun ServicesScreen(
                     }
                 }
 
-                // Section 2: Official Government Portals Header
+                // Section 2: Mandatory Government Disclaimer Card
                 item {
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Surface(
+                        color = Color(0xFFFEF3C7),
+                        shape = RoundedCornerShape(12.dp),
+                        border = BorderStroke(1.dp, Color(0xFFF59E0B)),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Icon(
+                                    Icons.Default.Gavel,
+                                    contentDescription = "Government Disclaimer",
+                                    tint = Color(0xFF92400E),
+                                    modifier = Modifier.size(18.dp)
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(
+                                    text = "সরকারি অস্বীকৃতি ও তথ্যের পাবলিক উৎস (Legal Disclaimer)",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 12.sp,
+                                    color = Color(0xFF92400E)
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "⚠️ এই অ্যাপ্লিকেশনটি গণপ্রজাতন্ত্রী বাংলাদেশ সরকার বা কোনো সরকারি দপ্তরের অফিশিয়াল অ্যাপ নয় এবং সরকারের কোনো প্রতিনিধিত্ব করে না। এটি একটি স্বাধীন বেসরকারি প্রযুক্তিগত ও আইনি সহায়ক প্ল্যাটফর্ম। নাগরিকদের তথ্যের স্বচ্ছতার জন্য সরকারের অনুমোদিত পাবলিক পোর্টালের সরাসরি লিংকসমূহ নিচে প্রদান করা হলো।",
+                                fontSize = 11.sp,
+                                lineHeight = 16.sp,
+                                color = Color(0xFF78350F)
+                            )
+                        }
+                    }
+                }
+
+                // Section 3: Official Government Portals Header
+                item {
+                    Spacer(modifier = Modifier.height(6.dp))
                     Surface(
                         color = LandGreenContainer,
                         shape = RoundedCornerShape(12.dp),

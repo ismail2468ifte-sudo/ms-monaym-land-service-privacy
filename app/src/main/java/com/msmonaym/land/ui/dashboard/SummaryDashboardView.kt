@@ -57,6 +57,7 @@ fun SummaryDashboardView(
     val context = LocalContext.current
     var selectedFilter by remember { mutableStateOf("সব সেবা") }
     var trackingDialogService by remember { mutableStateOf<String?>(null) }
+    var showLegalDisclaimerDialog by remember { mutableStateOf(false) }
 
     val filterOptions = remember {
         listOf("সব সেবা", "ই-পর্চা ও খতিয়ান", "ভূমি উন্নয়ন কর", "ই-নামজারি", "পরিমাপ ও হিস্যা")
@@ -387,14 +388,51 @@ fun SummaryDashboardView(
             }
         }
 
-        // 5. Official Government Portals Quick Action Banner
-        OutlinedCard(
+        // 5. Official Government Portals & Mandatory Legal Disclaimer Card
+        Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.outlinedCardColors(containerColor = Color.White),
-            border = BorderStroke(1.dp, BorderColor)
+            colors = CardDefaults.cardColors(containerColor = Color.White),
+            border = BorderStroke(1.dp, Color(0xFFFDE68A)),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
         ) {
             Column(modifier = Modifier.padding(14.dp)) {
+                // Mandatory Government Disclaimer Warning Banner
+                Surface(
+                    color = Color(0xFFFEF3C7),
+                    shape = RoundedCornerShape(10.dp),
+                    border = BorderStroke(1.dp, Color(0xFFF59E0B)),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                Icons.Default.Gavel,
+                                contentDescription = "Legal Disclaimer",
+                                tint = Color(0xFF92400E),
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = "সরকারি অস্বীকৃতি ও তথ্যের উৎস (Legal Disclaimer)",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp,
+                                color = Color(0xFF92400E)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "⚠️ এই অ্যাপ্লিকেশনটি গণপ্রজাতন্ত্রী বাংলাদেশ সরকার বা কোনো সরকারি দপ্তরের অফিশিয়াল অ্যাপ নয় এবং সরকারের কোনো প্রতিনিধিত্ব করে না। এটি একটি স্বাধীন বেসরকারি প্রযুক্তিগত ও আইনি সহায়ক প্ল্যাটফর্ম। নাগরিকদের তথ্যের স্বচ্ছতা ও সহায়তার জন্য সরকারের উন্মুক্ত পাবলিক পোর্টালের সরাসরি লিংকসমূহ নিচে প্রদান করা হলো।",
+                            fontSize = 11.sp,
+                            lineHeight = 16.sp,
+                            color = Color(0xFF78350F)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Government Portals Header
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically
@@ -402,61 +440,171 @@ fun SummaryDashboardView(
                     Surface(
                         shape = CircleShape,
                         color = LandGreenContainer,
-                        modifier = Modifier.size(34.dp)
+                        modifier = Modifier.size(32.dp)
                     ) {
                         Box(contentAlignment = Alignment.Center) {
                             Icon(
                                 Icons.Default.Language,
                                 contentDescription = null,
                                 tint = LandGreenPrimary,
-                                modifier = Modifier.size(18.dp)
+                                modifier = Modifier.size(17.dp)
                             )
                         }
                     }
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Spacer(modifier = Modifier.width(8.dp))
                     Column {
                         Text(
-                            text = "অফিসিয়াল সরকারি ভূমি পোর্টাল",
+                            text = "বাংলাদেশ সরকারের অফিশিয়াল পাবলিক পোর্টালসমূহ",
                             fontWeight = FontWeight.Bold,
-                            fontSize = 12.5.sp,
+                            fontSize = 12.sp,
                             color = LandGreenDark
                         )
                         Text(
-                            text = "জাতীয় ভূমি সেবা ও জরিপ অধিদপ্তরের পাবলিক পোর্টাল",
-                            fontSize = 10.5.sp,
+                            text = "যেকোনো পোর্টাল সরাসরি ব্রাউজারে খুলতে বাটনে চাপুন",
+                            fontSize = 10.sp,
                             color = TextSecondary
                         )
                     }
                 }
+
                 Spacer(modifier = Modifier.height(10.dp))
+
+                // Row 1: land.gov.bd & eporcha.gov.bd
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     OutlinedButton(
                         onClick = {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.land.gov.bd/"))
-                            context.startActivity(intent)
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.land.gov.bd/")))
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                            }
                         },
                         modifier = Modifier.weight(1f),
                         shape = RoundedCornerShape(8.dp),
                         contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
                         border = BorderStroke(1.dp, LandGreenPrimary)
                     ) {
-                        Text("🏛️ land.gov.bd", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                        Text("🏛️ land.gov.bd", fontSize = 10.5.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
                     }
                     OutlinedButton(
                         onClick = {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://dlrs.gov.bd/"))
-                            context.startActivity(intent)
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://eporcha.gov.bd/")))
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                            }
                         },
                         modifier = Modifier.weight(1f),
                         shape = RoundedCornerShape(8.dp),
                         contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
                         border = BorderStroke(1.dp, LandGreenPrimary)
                     ) {
-                        Text("🗺️ dlrs.gov.bd", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                        Text("📜 eporcha.gov.bd", fontSize = 10.5.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
                     }
+                }
+
+                Spacer(modifier = Modifier.height(6.dp))
+
+                // Row 2: ldtax.gov.bd & mutation.land.gov.bd
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    OutlinedButton(
+                        onClick = {
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://ldtax.gov.bd/")))
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
+                        border = BorderStroke(1.dp, LandGreenPrimary)
+                    ) {
+                        Text("💰 ldtax.gov.bd", fontSize = 10.5.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                    }
+                    OutlinedButton(
+                        onClick = {
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://mutation.land.gov.bd/")))
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
+                        border = BorderStroke(1.dp, LandGreenPrimary)
+                    ) {
+                        Text("📑 mutation.gov.bd", fontSize = 10.5.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(6.dp))
+
+                // Row 3: minland.gov.bd & dlrs.gov.bd
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    OutlinedButton(
+                        onClick = {
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://minland.gov.bd/")))
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
+                        border = BorderStroke(1.dp, LandGreenPrimary)
+                    ) {
+                        Text("🏢 minland.gov.bd", fontSize = 10.5.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                    }
+                    OutlinedButton(
+                        onClick = {
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://dlrs.gov.bd/")))
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "ওয়েবসাইট ওপেন করা যায়নি", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp),
+                        border = BorderStroke(1.dp, LandGreenPrimary)
+                    ) {
+                        Text("🗺️ dlrs.gov.bd", fontSize = 10.5.sp, fontWeight = FontWeight.Bold, color = LandGreenDark)
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                // View Full Legal Policy & Disclaimer Button
+                TextButton(
+                    onClick = { showLegalDisclaimerDialog = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    contentPadding = PaddingValues(vertical = 4.dp)
+                ) {
+                    Icon(
+                        Icons.Default.VerifiedUser,
+                        contentDescription = null,
+                        tint = LandGreenPrimary,
+                        modifier = Modifier.size(15.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "পূর্ণাঙ্গ গোপনীয়তা নীতি ও আইনি ডিসক্লেইমার পড়ুন",
+                        fontSize = 11.5.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = LandGreenPrimary
+                    )
                 }
             }
         }
@@ -476,6 +624,13 @@ fun SummaryDashboardView(
                 }
                 trackingDialogService = null
             }
+        )
+    }
+
+    // Mandatory Legal Disclaimer & Privacy Policy Dialog
+    if (showLegalDisclaimerDialog) {
+        com.msmonaym.land.data.PrivacyPolicyDialog(
+            onDismiss = { showLegalDisclaimerDialog = false }
         )
     }
 }

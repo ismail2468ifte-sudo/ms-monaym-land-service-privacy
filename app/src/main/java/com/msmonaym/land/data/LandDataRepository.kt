@@ -308,6 +308,24 @@ object LandDataRepository {
             category = "নামজারি",
             iconEmoji = "📑",
             description = "অনলাইনে নামজারি, জমা একত্রীকরণ ও জমাভাগ আবেদনের অফিসিয়াল সরকারি প্ল্যাটফর্ম।"
+        ),
+        OfficialPortal(
+            id = "minland_gov",
+            title = "ভূমি মন্ত্রণালয় বাংলাদেশ",
+            subTitle = "Ministry of Land (minland.gov.bd)",
+            url = "https://minland.gov.bd/",
+            category = "সরকারি মন্ত্রণালয়",
+            iconEmoji = "🏢",
+            description = "গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের ভূমি মন্ত্রণালয়ের মূল কেন্দ্রীয় প্রশাসনিক পোর্টাল।"
+        ),
+        OfficialPortal(
+            id = "bdlaws_gov",
+            title = "বাংলাদেশ আইন ও বিধিমালা বাতায়ন",
+            subTitle = "আইন ও বিচার বিভাগ (bdlaws.minlaw.gov.bd)",
+            url = "http://bdlaws.minlaw.gov.bd/",
+            category = "ভূমি আইন ও বিধিমালা",
+            iconEmoji = "⚖️",
+            description = "রাষ্ট্রীয় অধিগ্রহণ ও প্রজাস্বত্ব আইন, রেজিস্ট্রেশন আইন এবং সম্পত্তি হস্তান্তর আইনের অফিসিয়াল ডাটাবেজ।"
         )
     )
 

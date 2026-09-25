@@ -17,8 +17,8 @@ android {
     applicationId = "com.msmonaym.land"
     minSdk = 24
     targetSdk = 36
-    versionCode = 14
-    versionName = "14.0.0"
+    versionCode = 16
+    versionName = "1.0.2"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -29,9 +29,9 @@ android {
       val keyFile = file(keystorePath)
       if (keyFile.exists()) {
         storeFile = keyFile
-        storePassword = System.getenv("STORE_PASSWORD")
+        storePassword = System.getenv("STORE_PASSWORD") ?: "monaymland2026"
         keyAlias = "upload"
-        keyPassword = System.getenv("KEY_PASSWORD")
+        keyPassword = System.getenv("KEY_PASSWORD") ?: "monaymland2026"
       }
     }
     create("debugConfig") {
